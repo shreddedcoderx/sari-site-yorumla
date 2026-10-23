@@ -33,6 +33,12 @@ const publicEventsAbort=new AbortController(),publicEvents=await fetch(base+'/ap
 assert.equal((await call('/admin/moderate',{kind:'comments',id:pending.id,status:'approved'},a.cookie)).status,200);
 assert.match(new TextDecoder().decode((await readEvent(publicReader)).value),/"kind":"comments","vehicleId":"[^"]+"/);publicEventsAbort.abort();
 assert.equal((await call('/vehicles/'+id)).data.comments.length,1);
+const risky=await call('/vehicles/'+id+'/comments',{body:'İlan sahibi şerefsiz, kesinlikle konuşmayın.',role:'Aracı gördüm'},b.cookie);assert.equal(risky.status,201);
+const flagged=(await call('/admin',undefined,a.cookie)).data.comments.find(c=>c.vehicle_id===id&&c.review_flags);assert.match(flagged.review_flags,/hakaret/);
+assert.equal((await call('/admin/moderate',{kind:'comments',id:flagged.id,status:'approved'},a.cookie)).status,409);
+assert.equal((await call('/vehicles/'+id)).data.comments.length,1);
+assert.equal((await call('/admin/moderate',{kind:'comments',id:flagged.id,status:'approved',overrideFlagged:true},a.cookie)).status,200);
+assert.equal((await call('/vehicles/'+id)).data.comments.length,2);
 assert.equal((await call('/comments/'+pending.id+'/vote',{},a.cookie)).status,200);assert.equal((await call('/comments/'+pending.id+'/vote',{},b.cookie)).status,400);
 assert.equal((await call('/comments/'+pending.id+'/report',{reason:'Deneme amaçlı inceleme talebi.'},a.cookie)).status,200);
 assert.equal((await call('/vehicles/'+id+'/prices',{amount:2300000,observed:'2026-02-31'},b.cookie)).status,400);
@@ -50,8 +56,8 @@ assert.equal((await call('/account',undefined,b.cookie)).data.prices[0].status,'
 assert.equal((await call('/vehicles/'+id+'/follow',{},b.cookie)).data.following,true);
 assert.equal((await call('/vehicles',undefined,b.cookie)).data.vehicles[0].following,1);
 assert.equal((await call('/vehicles/'+id+'/comments',{body:'short',role:'Eski sahibiyim'},b.cookie)).status,400);
-assert.equal((await call('/account',undefined,b.cookie)).data.comments.length,1);
-await stop();await start();assert.equal((await call('/vehicles')).data.vehicles.length,1);assert.equal((await call('/vehicles/'+id)).data.comments.length,1);assert.equal((await call('/me',undefined,b.cookie)).data.user.name,'Ayşe');
+assert.equal((await call('/account',undefined,b.cookie)).data.comments.length,2);
+await stop();await start();assert.equal((await call('/vehicles')).data.vehicles.length,1);assert.equal((await call('/vehicles/'+id)).data.comments.length,2);assert.equal((await call('/me',undefined,b.cookie)).data.user.name,'Ayşe');
 assert.equal((await call('/logout',{},b.cookie)).status,200);assert.equal((await call('/me',undefined,b.cookie)).data.user,null);
 const login=await call('/login',{email:'b@example.com',password:'another-password-123'});assert.equal(login.status,200);
 assert.equal((await call('/login',{email:'b@example.com',password:'wrong-password-long'})).status,401);
