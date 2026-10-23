@@ -4,7 +4,7 @@ const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>'
 const brand='Sarı Site Yorumla';
 const description='Araç ilanı yorumlarını ilan numarasıyla bul. Eski sahiplerin ve aracı görmüş kişilerin deneyimlerini, kullanıcıların bildirdiği fiyatları oku; sen de yorum yap.';
 export function makeSeo({q,one,origin,template}){
- const eligible="v.status='approved' AND coalesce(v.demo,0)=0 AND EXISTS (SELECT 1 FROM comments c WHERE c.vehicle_id=v.id AND c.status='approved')";
+ const eligible="v.status='approved' AND coalesce(v.demo,0)=0 AND v.listing_no IS NOT NULL";
  const structured=data=>`<script type="application/ld+json">${JSON.stringify(data).replace(/</g,'\\u003c')}</script>`;
  const breadcrumb=(name,path)=>({'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:brand,item:origin+'/'},{'@type':'ListItem',position:2,name,item:origin+path}]});
  const page=(title,desc,path,content,index=true,schema=null)=>{const fallback=`<div class="seo-fallback" hidden aria-hidden="true">${content}</div><noscript>${content}</noscript>`;return template.replace(/<title>.*?<\/title>/,`<title>${escape(title)}</title>`).replace(/<meta name="description"[^>]*>/,`<meta name="description" content="${escape(desc)}">`).replace('</head>',`<link rel="canonical" href="${escape(origin+path)}"><meta name="robots" content="${index?'index,follow':'noindex,follow'}"><meta property="og:type" content="website"><meta property="og:locale" content="tr_TR"><meta property="og:site_name" content="${brand}"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(desc)}"><meta property="og:url" content="${escape(origin+path)}"><meta name="twitter:card" content="summary">${schema?structured(schema):''}</head>`).replace('<p class="loading">Sarı Site Yorumla yükleniyor…</p>',fallback);};
@@ -40,9 +40,9 @@ export function makeSeo({q,one,origin,template}){
    const comments=q("SELECT c.body,c.role,c.created,u.name FROM comments c JOIN users u ON u.id=c.user_id WHERE c.vehicle_id=? AND c.status='approved' ORDER BY c.created DESC LIMIT 50",v.id);
    const number=v.listing_no||v.id;
    const title=`İlan #${number} yorumları | ${brand}`;
-   const desc=`İlan #${number} için ${comments.length} onaylı yorum. Deneyimleri ve kullanıcıların bildirdiği fiyat kayıtlarını oku.`;
-   const index=comments.length>0&&!v.demo&&v.status==='approved';
-   return send(page(title,desc,path,`${nav}<main class="wrap prose"><h1>İlan #${escape(number)} yorumları</h1><h2>İlan yorumları</h2>${comments.length?comments.map(c=>`<article><h3>${escape(c.name)} · ${escape(c.role)}</h3><p>İlişki etiketi kullanıcı beyanıdır.</p><p>${escape(c.body)}</p><time datetime="${escape(c.created)}">${escape(c.created.slice(0,10))}</time></article>`).join(''):'<p>Henüz yayımlanmış yorum bulunmuyor. İlk deneyimi sen paylaş.</p>'}</main>${foot}`,index,index?breadcrumb(`İlan #${number} yorumları`,path):null),'text/html; charset=utf-8',200,index);
+   const desc=`İlan #${number} (${v.category}) için ${comments.length} onaylı yorum. Topluluğun deneyimlerini ve fiyat kayıtlarını oku.`;
+   const index=!!v.listing_no&&!v.demo&&v.status==='approved';
+   return send(page(title,desc,path,`${nav}<main class="wrap prose"><h1>İlan #${escape(number)} yorumları</h1><p>Kategori: ${escape(v.category)}</p><h2>İlan yorumları</h2>${comments.length?comments.map(c=>`<article><h3>${escape(c.name)} · ${escape(c.role)}</h3><p>İlişki etiketi kullanıcı beyanıdır.</p><p>${escape(c.body)}</p><time datetime="${escape(c.created)}">${escape(c.created.slice(0,10))}</time></article>`).join(''):'<p>Henüz yayımlanmış yorum bulunmuyor. İlk deneyimi sen paylaş.</p>'}</main>${foot}`,index,index?breadcrumb(`İlan #${number} yorumları`,path):null),'text/html; charset=utf-8',200,index);
   }
   if(['/account','/admin','/takip'].includes(path))return send(page(`${brand} — ${path==='/takip'?'Takip ettiklerim':'Hesabım'}`,'Üye hesabı.',path,'<p class="loading">Hesabın yükleniyor…</p>',false),'text/html; charset=utf-8',200,false);
   if(!path.includes('.' )&&!path.startsWith('/api/'))return send(page(`Sayfa bulunamadı | ${brand}`,'Sayfa bulunamadı.',path,`${nav}<main class="wrap prose"><h1>Sayfa bulunamadı.</h1><a href="/">Ana sayfa</a></main>`,false),'text/html; charset=utf-8',404,false);
