@@ -143,3 +143,7 @@ svg.inline-icon{display:inline-block!important;vertical-align:-.16em;width:1em;h
 .legal-page h2{margin-top:0}
 .legal-page p{color:#454c42;font-size:15px;line-height:1.85}
 .legal-page p a{text-decoration:underline;text-underline-offset:3px}
+
+.representative-car{margin:0 0 18px;overflow:hidden;border:1px solid #dfe2d9;border-radius:16px;background:#eef0e9}
+.representative-car svg{display:block;width:100%;height:auto}
+.representative-car figcaption{padding:11px 16px;border-top:1px solid #dfe2d9;background:#fff;color:#62695f;font-size:11px;line-height:1.4}
