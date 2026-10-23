@@ -143,14 +143,15 @@ const noticeAbort=new AbortController(),noticeEvents=await fetch(base+'/api/even
 assert.equal((await call('/admin/moderate',{kind:'comments',id:pendingReply.id,status:'approved'},a.cookie)).status,200);
 assert.match(new TextDecoder().decode((await readEvent(noticeReader)).value),/"kind":"notifications"/);noticeAbort.abort();
 assert.equal((await call('/vehicles/'+id,undefined,freshB.cookie)).data.comments.some(c=>c.parent_id===pending.id),true);
-const notices=(await call('/notifications',undefined,freshB.cookie)).data;assert.ok(notices.unread>0);assert.ok(notices.items.some(n=>n.kind==='reply'));
+const notices=(await call('/notifications',undefined,freshB.cookie)).data;assert.ok(notices.unread>0);assert.ok(notices.items.some(n=>n.kind==='reply'&&n.message==='#1318443200 numaralı ilandaki yorumuna yanıt eklendi.'));assert.equal(notices.items.filter(n=>n.comment_id===pendingReply.id).length,1);
 const newComment=await call('/vehicles/'+id+'/comments',{body:'Ben de bu ilanın geçmişi hakkında somut bir bilgi paylaşabilirim.',role:'Aracı gördüm'},a.cookie);assert.equal(newComment.status,201);
 const followedComment=(await call('/admin',undefined,a.cookie)).data.comments.find(c=>c.body.startsWith('Ben de bu ilanın'));
 assert.equal((await call('/admin/moderate',{kind:'comments',id:followedComment.id,status:'approved'},a.cookie)).status,200);
 assert.ok((await call('/notifications',undefined,freshB.cookie)).data.items.some(n=>n.kind==='comment'));
+const followedPrice=await call('/vehicles/'+id+'/prices',{amount:2400000,observed:'2026-10-02'},a.cookie);assert.equal(followedPrice.status,201);const priceToApprove=(await call('/admin',undefined,a.cookie)).data.prices.find(p=>p.amount===2400000);assert.equal((await call('/admin/moderate',{kind:'prices',id:priceToApprove.id,status:'approved'},a.cookie)).status,200);assert.ok((await call('/notifications',undefined,freshB.cookie)).data.items.some(n=>n.kind==='followed_price'&&n.message.includes('#1318443200')));
 const ownNotice=(await call('/notifications',undefined,a.cookie)).data.items[0];assert.equal((await call('/notifications/read',{id:ownNotice.id},freshB.cookie)).status,200);assert.equal((await call('/notifications',undefined,a.cookie)).data.items[0].read_at,null);
 assert.equal((await call('/notifications/read',{all:true},freshB.cookie)).status,200);assert.equal((await call('/notifications',undefined,freshB.cookie)).data.unread,0);
-assert.equal((await call('/admin/moderate',{kind:'vehicles',id,status:'suspended'},a.cookie)).status,200);
+assert.equal((await call('/admin/moderate',{kind:'vehicles',id,status:'suspended'},a.cookie)).status,200);assert.ok((await call('/notifications',undefined,freshB.cookie)).data.items.some(n=>n.kind==='followed_suspended'));
 assert.equal((await call('/comments/'+pending.id+'/replies',{body:'Askıdaki ilana yazılmamalı.'},freshB.cookie)).status,423);
 assert.equal((await call('/admin/moderate',{kind:'vehicles',id,status:'approved'},a.cookie)).status,200);
 const notificationsPage=await fetch(base+'/notifications');assert.equal(notificationsPage.status,200);assert.match(notificationsPage.headers.get('x-robots-tag'),/noindex/);
