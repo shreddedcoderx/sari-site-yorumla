@@ -13,7 +13,7 @@ export function makeSeo({q,one,origin,template}){
  return (req,res,path)=>{
   const send=(body,type='text/html; charset=utf-8',status=200,index=true)=>{res.writeHead(status,{'Content-Type':type,'Cache-Control':'no-cache',...(!index?{'X-Robots-Tag':'noindex, follow'}:{})});res.end(req.method==='HEAD'?undefined:body);return true;};
   if(!['GET','HEAD'].includes(req.method))return false;
-  if(path==='/robots.txt')return send(`User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin\nDisallow: /account\nDisallow: /takip\nSitemap: ${origin}/sitemap.xml\n`,'text/plain; charset=utf-8');
+  if(path==='/robots.txt')return send(`User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin\nDisallow: /account\nDisallow: /notifications\nDisallow: /takip\nSitemap: ${origin}/sitemap.xml\n`,'text/plain; charset=utf-8');
   const xml=entries=>'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+entries.map(e=>`<url><loc>${escape(origin+e)}</loc></url>`).join('')+'</urlset>';
   if(path==='/sitemap.xml'){
    const count=one(`SELECT count(*) total FROM vehicles v WHERE ${eligible}`).total;
@@ -44,7 +44,7 @@ export function makeSeo({q,one,origin,template}){
    const index=!!v.listing_no&&!v.demo&&v.status==='approved';
    return send(page(title,desc,path,`${nav}<main class="wrap prose"><h1>İlan #${escape(number)} yorumları</h1><p>Kategori: ${escape(v.category)}</p><h2>İlan yorumları</h2>${comments.length?comments.map(c=>`<article><h3>${escape(c.name)} · ${escape(c.role)}</h3><p>İlişki etiketi kullanıcı beyanıdır.</p><p>${escape(c.body)}</p><time datetime="${escape(c.created)}">${escape(c.created.slice(0,10))}</time></article>`).join(''):'<p>Henüz yayımlanmış yorum bulunmuyor. İlk deneyimi sen paylaş.</p>'}</main>${foot}`,index,index?breadcrumb(`İlan #${number} yorumları`,path):null),'text/html; charset=utf-8',200,index);
   }
-  if(['/account','/admin','/takip'].includes(path))return send(page(`${brand} — ${path==='/takip'?'Takip ettiklerim':'Hesabım'}`,'Üye hesabı.',path,'<p class="loading">Hesabın yükleniyor…</p>',false),'text/html; charset=utf-8',200,false);
+  if(['/account','/admin','/notifications','/takip'].includes(path))return send(page(`${brand} — ${path==='/takip'?'Takip ettiklerim':path==='/notifications'?'Bildirimler':'Hesabım'}`,'Üye hesabı.',path,'<p class="loading">Hesabın yükleniyor…</p>',false),'text/html; charset=utf-8',200,false);
   if(!path.includes('.' )&&!path.startsWith('/api/'))return send(page(`Sayfa bulunamadı | ${brand}`,'Sayfa bulunamadı.',path,`${nav}<main class="wrap prose"><h1>Sayfa bulunamadı.</h1><a href="/">Ana sayfa</a></main>`,false),'text/html; charset=utf-8',404,false);
   return false;
  };
