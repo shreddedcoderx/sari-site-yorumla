@@ -1,0 +1,20 @@
+<!-- Lucide v1.61.0, ISC License: https://lucide.dev/license --><svg xmlns="http://www.w3.org/2000/svg"><symbol id="arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" /></symbol><symbol id="car-front" viewBox="0 0 24 24"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" />
+  <path d="M7 14h.01" />
+  <path d="M17 14h.01" />
+  <rect width="18" height="8" x="3" y="10" rx="2" />
+  <path d="M5 18v2" />
+  <path d="M19 18v2" /></symbol><symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol><symbol id="circle-user-round" viewBox="0 0 24 24"><path d="M17.925 20.056a6 6 0 0 0-11.851.001" />
+  <circle cx="12" cy="11" r="4" />
+  <circle cx="12" cy="12" r="10" /></symbol><symbol id="external-link" viewBox="0 0 24 24"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></symbol><symbol id="flag" viewBox="0 0 24 24"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" /></symbol><symbol id="heart" viewBox="0 0 24 24"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></symbol><symbol id="house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+  <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol><symbol id="list-filter" viewBox="0 0 24 24"><path d="M2 5h20" />
+  <path d="M6 12h12" />
+  <path d="M9 19h6" /></symbol><symbol id="message-circle" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol><symbol id="message-circle-plus" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+  <path d="M8 12h8" />
+  <path d="M12 8v8" /></symbol><symbol id="plus" viewBox="0 0 24 24"><path d="M5 12h14" />
+  <path d="M12 5v14" /></symbol><symbol id="search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34" />
+  <circle cx="11" cy="11" r="8" /></symbol><symbol id="thumbs-up" viewBox="0 0 24 24"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
+  <path d="M7 10v12" /></symbol><symbol id="x" viewBox="0 0 24 24"><path d="M18 6 6 18" />
+  <path d="m6 6 12 12" /></symbol></svg>

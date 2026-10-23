@@ -1,0 +1,122 @@
+{
+  "about": {
+    "title": "Proje hakkında",
+    "description": "Sarı Site Yorumla'nın bağımsız ve kâr amacı gütmeyen yapısı.",
+    "heading": "Bağımsız bir topluluk projesi.",
+    "intro": "<p>Sarı Site Yorumla, kişisel ve bağımsız bir hobi projesi olarak geliştirilir. Bu aşamada reklam, ücretli üyelik, komisyon veya satış geliri elde edilmez. İlan numarası etrafında kullanıcı deneyimlerini bir araya getirmeyi amaçlar.</p>",
+    "sections": [
+      [
+        "Bağımsızlık",
+        "<p>Bu site herhangi bir ilan platformunun resmî hizmeti, iş ortağı veya temsilcisi değildir. Üçüncü taraf ilanların içeriği otomatik olarak alınmaz; ilan numarası yalnızca topluluk içindeki yorum sayfasını eşleştirmek için kullanılır.</p>"
+      ],
+      [
+        "Kaynak kodu",
+        "<p>Projenin kaynak kodu <a href=\"https://github.com/shreddedcoderx/sari-site-yorumla\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub üzerinde</a> MIT lisansıyla paylaşılır. Canlı ortam verileri ve erişim bilgileri depoda bulunmaz.</p>"
+      ],
+      [
+        "İletişim",
+        "<p>Proje, erişilebilirlik veya içerik konusunda önerilerini <a href=\"mailto:shreddedcoderx@gmail.com\">shreddedcoderx@gmail.com</a> adresine gönderebilirsin.</p>"
+      ]
+    ]
+  },
+  "terms": {
+    "title": "Kullanım koşulları",
+    "description": "Üyelik, kullanıcı içerikleri ve platformun kullanım koşulları.",
+    "heading": "Kullanım koşulları.",
+    "intro": "<p>Son güncelleme: 23 Ekim 2026. Hesap oluşturarak bu koşulları ve <a href=\"/guide\">topluluk kurallarını</a> kabul edersin. <a href=\"/privacy\">KVKK aydınlatma metni</a> ve <a href=\"/cookies\">çerez bilgisi</a> ayrıca okunabilir.</p>",
+    "sections": [
+      [
+        "Hizmetin niteliği",
+        "<p>Site, ilan numaralarına ilişkin kullanıcı yorumları ve kullanıcıların bildirdiği fiyatları gösteren bağımsız, kâr amacı gütmeyen bir topluluk projesidir. İlanın varlığı, güncelliği, araç kimliği, sahiplik beyanı, yorum ve fiyat doğruluğu garanti edilmez. Yönetici onayı doğrulama veya ekspertiz değildir.</p>"
+      ],
+      [
+        "Hesabın ve katkıların",
+        "<p>Hesap bilgilerini doğru tutmalı ve hesabının güvenliğini korumalısın. Yalnızca paylaşmaya yetkili olduğun, kendi deneyimine dayanan içerikler göndermelisin. İftira, hakaret, tehdit, reklam, telif hakkı ihlali ve üçüncü kişilerin özel bilgileri yasaktır. İçeriğin hukuka uygunluğundan gönderen kullanıcı sorumludur.</p><p>İçeriğinin hakları sende kalır. Gönderdiğin içeriğin hizmette gösterilmesi, saklanması ve teknik olarak çoğaltılması için platforma, hizmetin işletilmesiyle sınırlı, ücretsiz ve münhasır olmayan izin verirsin. Kişisel veriler için ayrıca <a href=\"/privacy\">aydınlatma metni</a> geçerlidir.</p>"
+      ],
+      [
+        "İnceleme ve kaldırma",
+        "<p>İlan sayfaları, yorumlar ve fiyat bildirimleri incelenebilir; içerik reddedilebilir, askıya alınabilir veya kaldırılabilir. İnceleme yapılması içerik için doğruluk taahhüdü oluşturmaz. Hukuka aykırı veya hak ihlali oluşturduğunu düşündüğün içeriği sayfadaki şikâyet aracıyla ya da <a href=\"mailto:shreddedcoderx@gmail.com\">e-posta</a> yoluyla bildirebilirsin. Bildirimde ilgili sayfa bağlantısını, gerekçeni ve mümkünse doğrulayıcı bilgileri belirt; gereksiz kişisel veri gönderme.</p>"
+      ],
+      [
+        "Karar verme ve sorumluluk",
+        "<p>Yorum ve fiyat kayıtları kullanıcı beyanıdır; alım-satım, kredi, sigorta veya güvenlik kararı için tek kaynak olarak kullanılmamalıdır. Profesyonel ekspertiz ve bağımsız doğrulama yaptırmalısın. Hizmet kesintisiz veya hatasız olacağı vaadiyle sunulmaz. Uygulanabilir hukukun emredici hükümlerinden doğan hak ve sorumluluklar saklıdır; bu koşullar platformun kanuni yükümlülüklerini ortadan kaldırmaz.</p>"
+      ],
+      [
+        "Değişiklikler ve iletişim",
+        "<p>Koşullar güncellenirse yeni sürüm ve tarih bu sayfada gösterilir. Önemli değişikliklerde mevcut kullanıcıların yeniden kabulü istenebilir. Sorular için <a href=\"mailto:shreddedcoderx@gmail.com\">shreddedcoderx@gmail.com</a> adresine yazabilirsin.</p>"
+      ]
+    ]
+  },
+  "privacy": {
+    "title": "KVKK aydınlatma metni",
+    "description": "Kişisel verilerin işlenmesi, saklanması ve KVKK kapsamındaki haklar.",
+    "heading": "Verilerin nasıl işleniyor?",
+    "intro": "<p>Son güncelleme: 23 Ekim 2026. Veri sorumlusu: Sarı Site Yorumla projesinin bağımsız işletmecisi. İletişim: <a href=\"mailto:shreddedcoderx@gmail.com\">shreddedcoderx@gmail.com</a>. Bu metin bilgilendirme içindir; üyelik için ayrıca bir açık rıza talebi değildir.</p>",
+    "sections": [
+      [
+        "İşlenen veriler",
+        "<p>Üyelikte e-posta adresin, görünen adın ve şifrenin tek yönlü özeti; oturum için rastgele oturum belirtecinin özeti ve bitiş zamanı tutulur. Gönderdiğin ilan numarası, yorum, ilişki beyanı, fiyat kaydı ve şikâyetler; bunların inceleme durumları ve zamanları saklanır. Güvenlik ve kötüye kullanımı önleme amacıyla IP adresine dayalı kısa süreli istek sayaçları bellekte tutulur. Şifre düz metin olarak saklanmaz.</p>"
+      ],
+      [
+        "Amaç ve hukuki sebep",
+        "<p>Hesap açma, oturum sağlama ve katkılarını yönetme işlemleri üyelik hizmetinin kurulması ve yürütülmesi için; güvenlik, şikâyet inceleme ve kötüye kullanımı önleme işlemleri meşru menfaat ve uygulanabilir hukuki yükümlülükler için yapılır (KVKK m. 5/2(c), (ç) ve (f), ilgili faaliyete uyduğu ölçüde). Bu site reklam veya davranışsal analiz amacıyla veri işlemez.</p>"
+      ],
+      [
+        "Kimler görebilir, aktarım",
+        "<p>E-posta adresin ve şifre özetin halka açık değildir. Görünen adın, onaylanan yorumların, ilişki beyanların ve fiyat kayıtların herkese açık olabilir. Teknik barındırma hizmeti sağlayıcısı hizmetin gerektirdiği ölçüde verilere erişebilir; yasal zorunluluk halinde yetkili mercilere bilgi verilebilir. Uygulama ve veritabanı Türkiye'deki sunucuda barındırılır. E-posta yoluyla bizimle iletişime geçersen e-posta hizmet sağlayıcının veri işleme koşulları da geçerli olabilir.</p>"
+      ],
+      [
+        "Toplama ve saklama",
+        "<p>Veriler kayıt ve katkı formlarından otomatik yollarla alınır. Hesap ve içerik verileri hizmetin ve inceleme süreçlerinin gerektirdiği süre boyunca tutulur; işleme amacı sona erdiğinde ve kanuni saklama yükümlülüğü yoksa silme veya anonimleştirme talepleri değerlendirilir. Oturum çerezi en çok 7 gün geçerlidir. Reklam ve analiz çerezi kullanılmaz; ayrıntılar <a href=\"/cookies\">çerez sayfasında</a> yer alır.</p>"
+      ],
+      [
+        "KVKK kapsamındaki hakların",
+        "<p>KVKK m. 11 uyarınca verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, amacını ve aktarım yapılanları öğrenme, yanlış verilerin düzeltilmesini, koşulları oluştuğunda silinmesini veya yok edilmesini isteme ve kanunda sayılan diğer haklarını kullanabilirsin. Talebini kayıtlı e-posta adresinden <a href=\"mailto:shreddedcoderx@gmail.com\">shreddedcoderx@gmail.com</a> adresine iletebilirsin. Başvurular niteliğine göre en kısa sürede, en geç 30 gün içinde yanıtlanır. Hesap silme ve veri dışa aktarma bu sürümde otomatik değildir.</p>"
+      ]
+    ]
+  },
+  "cookies": {
+    "title": "Çerez ve oturum bilgisi",
+    "description": "Sitedeki zorunlu oturum çerezi ve güvenlik sayaçları.",
+    "heading": "Yalnızca gerekli oturum çerezi.",
+    "intro": "<p>Son güncelleme: 23 Ekim 2026. Site, giriş yapmış kullanıcıyı tanımak için gerekli bir oturum çerezi kullanır. Reklam, izleme veya analiz çerezi kullanılmaz.</p>",
+    "sections": [
+      [
+        "Oturum çerezi",
+        "<p><strong>dobra_session</strong> adlı çerez, rastgele oturum belirtecini taşır. Sunucuda yalnızca bu belirtecin özeti saklanır. Çerez HttpOnly ve SameSite=Lax özelliklerine sahiptir; canlı HTTPS ortamında Secure özelliğiyle gönderilir. En çok 7 gün geçerlidir; çıkış yaptığında oturum sonlandırılır. Bu çerez olmadan üye girişi çalışmaz.</p>"
+      ],
+      [
+        "Güvenlik verileri",
+        "<p>Kötüye kullanımı sınırlamak için IP adresine ve hesaba dayalı geçici istek sayaçları kullanılabilir. Bunlar reklam profili oluşturmak için kullanılmaz.</p>"
+      ],
+      [
+        "Tercihler",
+        "<p>Zorunlu oturum çerezi dışında izin gerektiren çerez kullanılmadığından ayrı bir pazarlama çerezi seçimi sunulmaz. Tarayıcından çerezleri silebilirsin; bu durumda hesabından çıkış yapmış olursun.</p>"
+      ]
+    ]
+  },
+  "guide": {
+    "title": "Topluluk kuralları",
+    "description": "Yorum ve fiyat katkılarında uyulacak kurallar.",
+    "heading": "Açık sözlü ol. Adil ol.",
+    "intro": "<p>Doğrudan yaşadığın deneyimi paylaş. Duyumu, tahmini ve kendi gözlemini ayır. Yorumlar satın alma kararı veya ekspertiz yerine geçmez.</p>",
+    "sections": [
+      [
+        "Gerçek deneyim",
+        "<p>Aracı ne zaman, hangi koşullarda gördüğünü ve neyi bizzat gözlemlediğini anlat. Sahiplik ve ekspertiz etiketleri doğrulanmış belge değil, kullanıcı beyanıdır.</p>"
+      ],
+      [
+        "Saygı ve mahremiyet",
+        "<p>Hakaret, tehdit, ayrımcılık, reklam, kanıtsız suçlama ve telif hakkı ihlali içeren içerik gönderme. Plaka, şasi numarası, telefon, adres, özel belge veya üçüncü kişilere ait kişisel veri paylaşma.</p>"
+      ],
+      [
+        "İnceleme",
+        "<p>Yorum ve fiyat bildirimleri yayımlanmadan önce incelenir. İlan numarasıyla açılan sayfa da onaylanmadan herkese açık olmaz. Onay, doğruluk veya araç kimliği garantisi değildir. Sorunlu içeriği şikâyet aracıyla bildir; kaldırma başvuruları için <a href=\"mailto:shreddedcoderx@gmail.com\">e-posta</a> da kullanabilirsin.</p>"
+      ],
+      [
+        "Sınırlar",
+        "<p>Fiyatlar kullanıcı bildirimidir, piyasa değeri veya güncel satış bedeli değildir. Üçüncü taraf ilanların içeriği otomatik alınmaz. Farklı ilan numaralarının aynı araca ait olup olmadığı doğrulanmaz.</p>"
+      ]
+    ]
+  }
+}

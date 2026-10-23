@@ -1,0 +1,11 @@
+import {DatabaseSync} from 'node:sqlite';
+import {resolve,dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const email=process.argv[2]?.trim().toLowerCase();
+if(!email)throw new Error('Usage: node admin.mjs registered-email');
+const db=new DatabaseSync(resolve(process.env.DATA_DIR||resolve(dirname(fileURLToPath(import.meta.url)),'data'),'dobra.sqlite'));
+const user=db.prepare('SELECT id FROM users WHERE email=?').get(email);
+if(!user)throw new Error('Register the account first.');
+db.prepare('UPDATE users SET is_admin=1 WHERE id=?').run(user.id);
+console.log('Registered account granted moderator permissions.');
+db.close();

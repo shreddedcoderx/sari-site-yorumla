@@ -1,0 +1,1 @@
+(()=>{let show=true;try{show=sessionStorage.getItem('sarisite-intro-seen')!=='1';if(show)sessionStorage.setItem('sarisite-intro-seen','1');}catch{}document.documentElement.classList.add('app-booting',show?'show-intro':'skip-intro');})();
